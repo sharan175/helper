@@ -1,0 +1,40 @@
+# Lab Experiment 7 - Hive CDR Analysis (Cloudera)
+
+# 1) Create sample data
+# gedit cdr.csv
+
+# 2) Start Hive CLI (interactive)
+# Start VirtualBox -> Cloudera VM -> open terminal
+hive
+
+# Or run everything as a script:
+# hive -f script.hql
+
+# 3) Create table (hive>)
+#   source create_table.hql
+# or paste contents of create_table.hql
+
+# 4) Copy cdr.csv into the VM (e.g. /home/cloudera/cdr.csv), then load:
+#   source load_data.hql
+
+# 5) Display table
+#   source query_display.hql
+#   SELECT * FROM cdr;
+
+# 6) Top 5 callers by total duration
+#   source query_top5_callers.hql
+
+# 7) Locations with most dropped calls (duration = 0)
+#   source query_dropped_calls.hql
+
+# 8) View for high-usage customers (total_duration > 100)
+#   source create_view.hql
+
+# 9) Index on caller_id
+#   source create_index.hql
+
+# Notes:
+# - duration = 0 means dropped call
+# - timestamp format: YYYY-MM-DD HH:MM:SS
+# - create_table.hql skips the CSV header line
+# - Adjust LOAD path if cdr.csv is not at /home/cloudera/cdr.csv
