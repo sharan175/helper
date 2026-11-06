@@ -1,0 +1,54 @@
+# Lab Experiment 6 - Pig Latin clickstream analysis
+# Prompts ($ / shell username) are omitted from the slide commands.
+
+# 1. Create data files with the contents provided (slide 12).
+gedit clickstream.csv
+gedit products.csv
+
+# 2. Create clickstream_analysis.pig in the same directory (slide 13).
+# Script LOAD order (slides 14-17): clickstream.csv, then products.csv.
+# Transformation order: purchases filter; views filter; group views;
+# count views; join product metadata; sort views; store both outputs.
+
+# 3. Run the script in local mode (slide 16).
+# In the illustrated VM this is run from /home/cloudera.
+pig -x local clickstream_analysis.pig
+
+# 4. Check the outputs (slide 16).
+cat /home/cloudera/output_purchases/part-m-00000
+cat /home/cloudera/output_views/part-r-00000
+
+# ALTERNATIVE slide-17 script:
+# clickstream_analysis_absolute.pig preserves that slide's complete code.
+# Both versions were titled clickstream_analysis.pig in the deck; the alternate
+# filename distinguishes them here. It uses file:///home/cloudera/ paths.
+# To follow the slide-16 command with the alternative, use the alternative's
+# contents as clickstream_analysis.pig in the VM. Do not run both in sequence:
+# both store to the same output directories, which must not already exist.
+
+# Additional commands shown in introductory slides (alternatives, NOT steps
+# to execute after the local run):
+# Slide 9 - MapReduce mode; input files must be in HDFS for relative LOADs.
+# The deck supplies no HDFS upload/preparation commands.
+# pig -x mapreduce -f clickstream_analysis.pig
+
+# Slide 8 - generic examples (script.pig is a placeholder, not a supplied file).
+# pig -x local -f script.pig
+# pig -x mapreduce -f script.pig
+# hdfs dfs -cat /user/cloudera/output/top10_views/part*
+
+# Slide 7 - generic Grunt output check (not defined by this lab's script):
+# DUMP top10_views;
+# For the actual lab, use the two cat commands above; no Grunt RUN/EXEC
+# command is shown in the deck.
+
+# Source caveats retained as-is:
+# - CSV headers are included exactly as slide 12 specifies; the lab script has
+#   no explicit header-removal step. The action filters discard the clickstream
+#   header; products.csv's price header may produce a numeric-cast warning/null,
+#   and its metadata header does not match the grouped product IDs.
+# - JOIN keeps both pid fields, so output_views has FIVE fields:
+#   pid,view_count,pid,price,category (as confirmed on slide 16).
+# - p1 and p2 both have 2 views; their relative order is unspecified.
+# - Purchases are filtered/stored, not grouped or ranked; no purchase-count
+#   ranking code is present on the slides.

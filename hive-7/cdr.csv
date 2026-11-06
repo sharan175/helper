@@ -1,0 +1,8 @@
+caller_id,receiver_id,duration,timestamp,location
+c1,r1,120,2025-09-10 09:00:00,NewYork
+c2,r3,0,2025-09-10 09:05:00,LosAngeles
+c1,r2,60,2025-09-10 09:10:00,NewYork
+c3,r1,200,2025-09-10 09:15:00,Chicago
+c2,r1,0,2025-09-10 09:20:00,LosAngeles
+c3,r2,50,2025-09-10 09:25:00,Chicago
+c1,r3,0,2025-09-10 09:30:00,NewYork
