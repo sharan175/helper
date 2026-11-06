@@ -1,0 +1,12 @@
+# Introductory school/student examples from slide 5, not the ecommerce lab.
+use school
+
+db.students.insertOne({ name: "John", age: 20, course: "Computer Science" })
+
+db.students.find( )
+
+db.students.findOne({ name: "John" })
+
+db.students.updateOne( { name: "John" }, { $set: { age: 21 } } )
+
+db.students.deleteOne({ name: "John" })

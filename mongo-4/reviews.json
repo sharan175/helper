@@ -1,0 +1,52 @@
+[
+  {
+    "customer_name": "Alice",
+    "product_id": "P101",
+    "category": "Electronics",
+    "rating": 4,
+    "comment": "Good quality, fast delivery.",
+    "review_date": {
+      "$date": "2025-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "customer_name": "Bob",
+    "product_id": "P101",
+    "category": "Electronics",
+    "rating": 5,
+    "comment": "Excellent product!",
+    "review_date": {
+      "$date": "2025-09-02T00:00:00.000Z"
+    }
+  },
+  {
+    "customer_name": "Charlie",
+    "product_id": "P102",
+    "category": "Books",
+    "rating": 3,
+    "comment": "Decent read but slow shipping.",
+    "review_date": {
+      "$date": "2025-09-03T00:00:00.000Z"
+    }
+  },
+  {
+    "customer_name": "David",
+    "product_id": "P103",
+    "category": "Clothing",
+    "rating": 2,
+    "comment": "Poor quality material.",
+    "review_date": {
+      "$date": "2025-09-04T00:00:00.000Z"
+    }
+  },
+  {
+    "customer_name": "Emma",
+    "product_id": "P102",
+    "category": "Books",
+    "rating": 4,
+    "comment": "Enjoyed the book!",
+    "review_date": {
+      "$date": "2025-09-05T00:00:00.000Z"
+    }
+  }
+]

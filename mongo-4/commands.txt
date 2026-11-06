@@ -1,0 +1,22 @@
+# Lab Experiment 4 - MongoDB customer review analysis
+# Slides 8-13: Open MongoDB Compass -> Add Connection -> Save & Connect.
+# Connection URI shown on slide 10:
+# mongodb://localhost:27017/
+# Click admin -> Open MongoDB Shell.
+# A running local MongoDB server is assumed; no server-start command is given.
+
+# Slide 14: Create / switch to the ecommerce database (interactive shell).
+use ecommerce;
+
+# Paste the complete contents of each file into the same shell, in this order:
+# 1. insert_reviews.js               (slide 14; run ONCE to avoid duplicates)
+# 2. query_display.js                (slide 14)
+# 3. query_count_reviews.js          (slide 15)
+# 4. query_sort_average_rating.js    (slide 16)
+# 5. query_top5_products.js          (slide 17)
+# 6. query_average_by_category.js    (slide 18)
+# These files preserve the actual slide queries; shell prompt ">" is omitted.
+# No load(), CLI launch, or import command was provided on the slides.
+# reviews.json is a separate data copy, not an additional insertion step.
+# Optional introductory examples: basic_commands.txt (slide 5), then
+# query_average_cse_marks.js (slide 6). The CSE/marks dataset is not supplied.
