@@ -1,0 +1,17 @@
+# Lab Experiment 2 - User-Feature Preference Matrix (Local Pipe)
+
+# Create the input files (already provided as ratings.txt and features.txt)
+# gedit ratings.txt
+# gedit features.txt
+# gedit mapper.py
+# gedit reducer1.py
+# gedit reducer2.py
+
+# Run the MapReduce job locally:
+cat ratings.txt features.txt | python mapper.py | sort | python reducer1.py | sort | python reducer2.py
+
+# Expected output:
+# U1	F1	5.000000
+# U1	F2	19.000000
+# U2	F1	12.000000
+# U2	F2	8.000000

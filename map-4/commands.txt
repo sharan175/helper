@@ -1,0 +1,15 @@
+# Lab Experiment 4 - MovieLens tags per movie (Local Pipe / Hadoop Streaming)
+
+# Create files (already provided):
+# gedit tags.csv
+# gedit movies.csv
+# gedit tags_mapper.py
+# gedit tags_reducer.py
+
+# Run locally (from this folder so movies.csv is found by the reducer):
+cat tags.csv | python tags_mapper.py | sort | python tags_reducer.py
+
+# Expected output:
+# Toy Story (1995)	animation,pixar,funny
+# Jumanji (1995)	board game,childhood
+# Heat (1995)	crime,classic
