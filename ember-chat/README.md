@@ -24,8 +24,8 @@ Default models: xAI `grok-4-fast` (automatically retries `grok-2-latest` on a 40
 
 ## Included
 
-- Eight original illustrated adult characters, individual SVG portraits, profiles, interests, and content ratings.
-- Discover search, rating chips, interest filtering, intentional empty states.
+- Eight original illustrated adult characters, individual SVG portraits, profiles, and interests. Every character is NSFW-eligible.
+- Discover search, interest filtering, intentional empty states.
 - Character creation, editing, deletion, initials fallback, image URL or resized image upload.
 - Streaming chat with stop button, Enter to send, Shift+Enter newline, provider errors and retry.
 - Saved conversations, resuming and deletion; human display name and persona.
@@ -38,7 +38,7 @@ Default models: xAI `grok-4-fast` (automatically retries `grok-2-latest` on a 40
 
 The key is sent in the `X-API-Key` header to this app's proxy for the duration of each request. The server forwards it only to the chosen provider, never persists it, and does not return raw provider errors that might contain sensitive data. Chat history (most recent 60 messages), character details, and persona are sent to that provider. Normal provider API charges and policies apply. A Custom endpoint receives the supplied key: only configure endpoints you trust.
 
-All seed characters are 21+. The UI and backend reject character ages below 21. Every system prompt requires staying in character as an adult 21+, never portraying or involving anyone under 21, and refusing requests involving minors. SFW, Suggestive, and Mature are editorial labels, not guarantees about generated output. An 18+ confirmation is self-attestation, not identity verification. Prompt instructions are not a replacement for provider-side moderation or a production safety system.
+All seed characters are 21+. The UI and backend reject character ages below 21. Every system prompt requires staying in character as an adult 21+, never portraying or involving anyone under 21, and refusing requests involving minors. There are no SFW, Suggestive, or Mature content ratings; every character is NSFW-eligible for any adult fictional content the user asks for. An 18+ confirmation is self-attestation, not identity verification. Prompt instructions are not a replacement for provider-side moderation or a production safety system.
 
 **Local personal-use prototype, not a hardened public service.** No authentication, per-user server accounts, or rate limiting. Because the requested bind is `0.0.0.0`, do not expose it to an untrusted network. Restrict access with a firewall. For public use, add authentication, HTTPS, request-size/rate controls and appropriate moderation. Custom URL DNS checks reject non-public addresses, but are not a complete defense against malicious DNS rebinding; do not run an open public proxy.
 
